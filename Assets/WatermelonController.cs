@@ -50,6 +50,7 @@ public class WatermelonController : MonoBehaviour
         {
             rb.MovePosition(targetPosition);
         }
+        rb.linearVelocity = Vector3.zero;
     }
 
     void DoRotate(Vector2 moveInput)

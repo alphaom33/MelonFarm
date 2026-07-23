@@ -1,7 +1,6 @@
-using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
-using Unity.U2D.Physics;
+using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
@@ -10,30 +9,19 @@ public class Inventory : MonoBehaviour
     public float Money;
 
 
-    //List of seeds
+    public Seed[] Seeds;
 
-    public List<Seed> Seeds;
-
-    [System.Serializable]
-    // Class for seeds
-    public class Seed
+    public void Start()
     {
-        public string Name;
-        public float MoneyMult;
-        public int SeedAmount;
-        public char Varient;
-
+        Seeds = Resources.LoadAll<Seed>("Seeds");
+        foreach (Seed seed in Seeds)
+        {
+            seed.number = 0;
+        }
     }
 
-    private void Start()
+    public Seed[] GetSeeds()
     {
-        // test line
-        Seeds.Add(new Seed() { Name = "Gold", MoneyMult = 2, Varient = 'G' });
-
-        // this would be put in a seed pickup, for example.
-        foreach (Seed s in Seeds)
-        {
-            if (s.Name == "Gold") s.SeedAmount++;
-        }
+        return Seeds.Where(s => s.number > 0).ToArray();
     }
 }

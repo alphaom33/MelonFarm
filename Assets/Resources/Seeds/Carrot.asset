@@ -10,6 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df008ca0d8d2c2742aff8aa7888aaff2, type: 3}
-  m_Name: Strawberry
+  m_Name: Carrot
   m_EditorClassIdentifier: Assembly-CSharp::Seed
-  icon: {fileID: 0}
+  icon: {fileID: 1287649992867056945, guid: 6eaa9958d83ec43499e946a21edba283, type: 3}
+  name: Carrot
+  buff: +1 Eyes
+  number: 0

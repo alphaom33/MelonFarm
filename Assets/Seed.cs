@@ -5,6 +5,6 @@ public class Seed : ScriptableObject
 {
     public Sprite icon;
     public new string name;
-    public string perks;
+    public string buff;
     public int number;
 }
