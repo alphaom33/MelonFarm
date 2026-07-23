@@ -1,22 +1,31 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlanterUI : MonoBehaviour
 {
+    public GameObject child;
+
+    public InputAction closeUI;
+
     public void OpenUI()
     {
-        gameObject.SetActive(true);
-        transform.LookAt(Camera.main.transform);
+        child.SetActive(true);
+        child.transform.LookAt(Camera.main.transform);
+        WatermelonController.canMove = false;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        child.SetActive(false);
+        closeUI = InputSystem.actions.FindAction("Cancel");
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (closeUI.triggered)
+        {
+            child.SetActive(false);
+            WatermelonController.canMove = true;
+        }
     }
 }

@@ -17,6 +17,8 @@ public class WatermelonController : MonoBehaviour
     private Rigidbody rb;
     private Vector3 targetPosition;
 
+    public static bool canMove = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -31,7 +33,7 @@ public class WatermelonController : MonoBehaviour
         Vector2 moveInput = move.ReadValue<Vector2>().normalized;
         targetPosition = transform.position + moveSpeed * Time.deltaTime * new Vector3(moveInput.x, 0, moveInput.y);
 
-        if (moveInput != Vector2.zero)
+        if (canMove && moveInput != Vector2.zero)
         {
             if  (moveInput != lastMove) DoRotate(moveInput);
         }
@@ -44,13 +46,9 @@ public class WatermelonController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!GetComponentInChildren<Caster>().Cast())
+        if (canMove && !GetComponentInChildren<Caster>().Cast())
         {
             rb.MovePosition(targetPosition);
-        }
-        else
-        {
-            Debug.Log("Hit ground");
         }
     }
 
