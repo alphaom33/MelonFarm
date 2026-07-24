@@ -13,4 +13,16 @@ public class WoodPickup : MonoBehaviour
     {
         
     }
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.GetComponent<WatermelonController>() != null)
+        {
+            Debug.Log("pickup");
+            other.gameObject.GetComponentInChildren<Inventory>().Wood++;
+            Destroy(this.gameObject);
+
+        }
+
+    }
 }

@@ -13,4 +13,17 @@ public class StonePickup : MonoBehaviour
     {
         
     }
+
+
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.GetComponent<WatermelonController>() != null)
+        {
+            Debug.Log("pickup");
+            other.gameObject.GetComponentInChildren<Inventory>().Stone++;
+            Destroy(this.gameObject);
+
+        }
+
+    }
 }

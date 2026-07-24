@@ -19,6 +19,7 @@ public class TreeInteract : MonoBehaviour
     public void Wood()
     {
         chops++;
+        Debug.Log("grrr");
         if (chops >= 3)
         {
             //make stone pickups.
