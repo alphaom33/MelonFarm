@@ -850,7 +850,7 @@ Transform:
   m_GameObject: {fileID: 449424622}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.35, y: -0.67, z: 0.04}
+  m_LocalPosition: {x: 8.88, y: -0.67, z: 0.04}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2349,12 +2349,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0f06af128d5d64c9cdae5f4a0ce0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WatermelonController
-  moveSpeed: 15
+  moveSpeed: 40
   camera: {fileID: 330585545}
   child: {fileID: 1344160995}
   time: 300
   rotSpeed: 500
-  seconds: 0
+  seconds: 300
 --- !u!4 &1818691241
 Transform:
   m_ObjectHideFlags: 0

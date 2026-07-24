@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Reflection.PortableExecutable;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -54,6 +55,7 @@ public class WatermelonController : MonoBehaviour
         {
             Debug.Log(time);
             if (!hit.collider.CompareTag("Farm")) time -= Time.deltaTime;
+            if (hit.collider.CompareTag("Farm")) time = seconds;
         }
         else
         {
