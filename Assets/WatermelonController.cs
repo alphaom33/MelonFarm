@@ -9,7 +9,7 @@ public class WatermelonController : MonoBehaviour
     public float moveSpeed;
 
     public Transform child;
-
+    public float time;
     IEnumerator rotator;
     public float rotSpeed;
 
@@ -42,6 +42,23 @@ public class WatermelonController : MonoBehaviour
             StopCoroutine(rotator);
         }
         lastMove = moveInput;
+        RaycastHit hit;
+        Debug.DrawRay(transform.position, -transform.up*10f, Color.red);
+        if (Physics.Raycast(this.transform.position, -transform.up, out hit, 10f))
+        {
+            Debug.Log(time);
+            if (!hit.collider.CompareTag("Farm")) time--;
+            
+        }
+
+
+
+        
+        if (time <= 0) Die();
+    }
+    private void Die()
+    {
+
     }
 
     void FixedUpdate()
