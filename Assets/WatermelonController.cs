@@ -45,14 +45,6 @@ public class WatermelonController : MonoBehaviour
         RaycastHit hit;
         Debug.DrawRay(transform.position, -transform.up*10f, Color.red);
 
-        // see if an object is obscuring the player, to fade it out shader has not been made yet
-       if ( Physics.Raycast(camera.transform.position, transform.position, out hit))
-        {
-            if (hit.collider.gameObject.layer != 3)
-            {
-                //hide object
-            }
-        }
         
         // check if player is on the farm land or not
         // its not working right now and I have no clue why, a debug draw ray shows the ray goes through the tiles, so I have no clue why this is not working.
