@@ -5,11 +5,12 @@ using UnityEngine.InputSystem;
 public class InteractionTrigger : MonoBehaviour
 {
     InputAction interact;
-
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         interact = InputSystem.actions.FindAction("Interact");
+
     }
 
     // Update is called once per frame
@@ -22,8 +23,10 @@ public class InteractionTrigger : MonoBehaviour
     {
         if (interact.IsPressed() && other.TryGetComponent(out Interactor interactor))
         {
+
             interactor.TriggerInteract();
         }
 
     }
+   
 }
