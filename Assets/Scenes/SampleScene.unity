@@ -2048,8 +2048,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WatermelonController
   moveSpeed: 15
+  camera: {fileID: 330585545}
   child: {fileID: 1344160995}
-  time: 0
+  time: 300
   rotSpeed: 500
 --- !u!4 &1818691241
 Transform:
