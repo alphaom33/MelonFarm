@@ -65,6 +65,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b05f89353dd5e249b30621bef2634ba, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2322937375651147181}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b05f89353dd5e249b30621bef2634ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7837662992095193432}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2b05f89353dd5e249b30621bef2634ba, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6014278658376653681}
   m_SourcePrefab: {fileID: 100100000, guid: 2b05f89353dd5e249b30621bef2634ba, type: 3}
 --- !u!1 &3759357760788727120 stripped
 GameObject:
@@ -83,3 +89,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55905388c99a3904e884b76258c3d91f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  StoneDrop: {fileID: 6496488684639920190, guid: 72a9dddd6ca97814cbe556878eab8c0c, type: 3}
+  hits: 0
+--- !u!65 &7837662992095193432
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759357760788727120}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.856238, y: 1.8757027, z: 2.2411697}
+  m_Center: {x: 0.07801527, y: -0.05320722, z: 0.077738166}
+--- !u!114 &6014278658376653681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759357760788727120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112eaaaa401496742b3ea3f7e379e9c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactor
+  interactEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2322937375651147181}
+        m_TargetAssemblyTypeName: StoneInteract, Assembly-CSharp
+        m_MethodName: Stone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

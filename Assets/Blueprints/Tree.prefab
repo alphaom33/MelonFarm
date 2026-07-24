@@ -69,6 +69,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6eced00df2477244382c358e5790c1e2, type: 3}
       insertIndex: -1
       addedObject: {fileID: -6843130503195485888}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6eced00df2477244382c358e5790c1e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -7054276409167452945}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6eced00df2477244382c358e5790c1e2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2860628920235465769}
   m_SourcePrefab: {fileID: 100100000, guid: 6eced00df2477244382c358e5790c1e2, type: 3}
 --- !u!1 &4017233398948553749 stripped
 GameObject:
@@ -87,3 +93,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c30ebcabcf6295941815976b2d080d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  WoodDrop: {fileID: 6152498313185695923, guid: d455fa05314631345a1d394b764db22b, type: 3}
+  chops: 0
+--- !u!114 &-7054276409167452945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017233398948553749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112eaaaa401496742b3ea3f7e379e9c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactor
+  interactEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -6843130503195485888}
+        m_TargetAssemblyTypeName: TreeInteract, Assembly-CSharp
+        m_MethodName: Wood
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &-2860628920235465769
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4017233398948553749}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3.1970317, z: 1}
+  m_Center: {x: 0, y: 1.0985152, z: 0}
