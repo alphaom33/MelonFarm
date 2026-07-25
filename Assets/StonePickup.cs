@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class StonePickup : MonoBehaviour
 {
+    public Vector3 rotateamount;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -11,7 +12,7 @@ public class StonePickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(rotateamount * Time.deltaTime);
     }
 
 
