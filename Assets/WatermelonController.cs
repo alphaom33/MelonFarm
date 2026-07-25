@@ -14,10 +14,12 @@ public class WatermelonController : MonoBehaviour
     IEnumerator rotator;
     public float rotSpeed;
     public int seconds;
-
+    public Inventory playerinv;
     private Vector2 lastMove;
     private Rigidbody rb;
     private Vector3 targetPosition;
+    public GameObject Body;
+    public Transform Respawn;
 
     public static bool canMove = true;
 
@@ -70,6 +72,18 @@ public class WatermelonController : MonoBehaviour
     }
     private void Die()
     {
+
+       GameObject Corpse = Instantiate(Body, transform.position, Quaternion.identity);
+        BodyScript BodInv = Corpse.GetComponent<BodyScript>();
+        BodInv.stone = playerinv.Stone;
+        BodInv.wood = playerinv.Wood;
+        playerinv.Stone = 0;
+        playerinv.Wood = 0;
+        transform.position = Respawn.position;
+        time =seconds;
+
+
+
 
     }
 
