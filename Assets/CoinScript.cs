@@ -33,7 +33,7 @@ public class CoinScript : MonoBehaviour
                 obj.transform.parent = null;
                 playerinv.Money -= playerinv.PlotCost;
 
-
+               OldPlot.GetComponent<GrassScript>().ScanNextPlots();
 
                 Destroy(OldPlot);
                 Destroy(this.gameObject);
