@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody))]
 public class WatermelonController : MonoBehaviour
 {
+    private static readonly int SpeedHash = Animator.StringToHash("speed");
     InputAction move;
     public float moveSpeed;
     public Camera camera;
@@ -20,6 +21,7 @@ public class WatermelonController : MonoBehaviour
     private Vector3 targetPosition;
     public GameObject Body;
     public Transform Respawn;
+    private Animator animator;
 
     public static bool canMove = true;
 
@@ -29,10 +31,10 @@ public class WatermelonController : MonoBehaviour
         move = InputSystem.actions.FindAction("Move");
         rb = GetComponent<Rigidbody>();
         targetPosition = transform.position;
+        animator = GetComponentInChildren<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Move()
     {
         Vector2 moveInput = move.ReadValue<Vector2>().normalized;
         targetPosition = transform.position + moveSpeed * Time.deltaTime * new Vector3(moveInput.x, 0, moveInput.y);
@@ -46,6 +48,14 @@ public class WatermelonController : MonoBehaviour
             StopCoroutine(rotator);
         }
         lastMove = moveInput;
+
+        animator.SetFloat(SpeedHash, moveInput.magnitude);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Move();
         Debug.DrawRay(transform.position, -transform.up*10f, Color.red);
 
         if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 10f))
