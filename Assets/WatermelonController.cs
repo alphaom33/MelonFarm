@@ -46,45 +46,31 @@ public class WatermelonController : MonoBehaviour
             StopCoroutine(rotator);
         }
         lastMove = moveInput;
-        RaycastHit hit;
-        Debug.DrawRay(this.transform.position, -this.transform.up*10f, Color.red);
+        Debug.DrawRay(transform.position, -transform.up*10f, Color.red);
 
-
-        // check if player is on the farm land or not
-        // its not working right now and I have no clue why, a debug draw ray shows the ray goes through the tiles, so I have no clue why this is not working.
-        // if you find a solution, leave what you did in a comment so I can know for the future.
-        if (Physics.Raycast(this.transform.position, -this.transform.up, out hit, 10f))
+        if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 10f))
         {
-            Debug.Log(time);
-            if (!hit.collider.CompareTag("Farm")) time -= Time.deltaTime;
             if (hit.collider.CompareTag("Farm")) time = seconds;
+            else time -= Time.deltaTime;
         }
         else
         {
             time -= Time.deltaTime;
         }
 
-
-
-
-
         if (time <= 0) Die();
     }
     private void Die()
     {
 
-       GameObject Corpse = Instantiate(Body, transform.position, Quaternion.identity);
+        GameObject Corpse = Instantiate(Body, transform.position, Quaternion.identity);
         BodyScript BodInv = Corpse.GetComponent<BodyScript>();
         BodInv.stone = playerinv.Stone;
         BodInv.wood = playerinv.Wood;
         playerinv.Stone = 0;
         playerinv.Wood = 0;
         transform.position = Respawn.position;
-        time =seconds;
-
-
-
-
+        time = seconds;
     }
 
     void FixedUpdate()
