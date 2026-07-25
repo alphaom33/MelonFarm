@@ -7,6 +7,7 @@ public class Inventory : MonoBehaviour
     public int Wood;
     public int Stone;
     public float Money;
+    public float PlotCost;
 
 
     public Seed[] Seeds;
