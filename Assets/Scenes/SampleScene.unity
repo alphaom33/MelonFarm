@@ -9526,7 +9526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e0f06af128d5d64c9cdae5f4a0ce0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WatermelonController
-  moveSpeed: 40
+  moveSpeed: 0.4
   camera: {fileID: 330585545}
   child: {fileID: 1344160995}
   time: 300
