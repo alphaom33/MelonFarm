@@ -53,6 +53,13 @@ public class PlanterList : MonoBehaviour
             seeds.Add(uprootSeed);
         }
         ApplySeeds();
+        StartCoroutine(Why());
+    }
+
+    IEnumerator Why()
+    {
+        yield return new WaitForEndOfFrame();
+        ApplySeeds();
     }
 
     private int WrapIndex(int index, int length)
@@ -62,7 +69,6 @@ public class PlanterList : MonoBehaviour
 
     private void EnableChildren(Transform transform, bool yes)
     {
-        Debug.Log(yes);
         transform.GetChild(1).gameObject.SetActive(yes);
     }
 
