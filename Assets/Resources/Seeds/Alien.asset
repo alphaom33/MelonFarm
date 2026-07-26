@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Seed
   icon: {fileID: 21300000, guid: 7d460d42d1e029449bfab359e44b8b82, type: 3}
   name: Alien
-  buff: 
+  buff: 4
   number: 0
