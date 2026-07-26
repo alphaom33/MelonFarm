@@ -22,6 +22,7 @@ public class WatermelonController : MonoBehaviour
     public GameObject Body;
     public Transform Respawn;
     private Animator animator;
+    public TimerScript Timer;
 
     public static bool canMove = true;
 
@@ -72,15 +73,22 @@ public class WatermelonController : MonoBehaviour
     }
     private void Die()
     {
-        transform.position = Respawn.position;
-        time = seconds;
         GameObject Corpse = Instantiate(Body, transform.position, Quaternion.identity);
         BodyScript BodInv = Corpse.GetComponent<BodyScript>();
         BodInv.stone = playerinv.Stone;
         BodInv.wood = playerinv.Wood;
         playerinv.Stone = 0;
         playerinv.Wood = 0;
-       
+
+
+        transform.position = Respawn.position;
+        time = seconds;
+      
+
+        Timer.Timer.rectTransform.anchoredPosition = Timer.TimerPos;
+        Timer.Timer.color = Color.white;
+        Timer.Timer.fontSize = Timer.DefSize;
+
     }
 
     void FixedUpdate()
