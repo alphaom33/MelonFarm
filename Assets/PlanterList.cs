@@ -106,7 +106,7 @@ public class PlanterList : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        offset -= (int)direction;
+        offset += (int)direction;
         ApplySeeds();
 
         for (int i = 0; i < transform.childCount; i++)
