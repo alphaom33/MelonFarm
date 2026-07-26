@@ -21,6 +21,8 @@ public class PlanterList : MonoBehaviour
     public FarmPlot plot;
     public Seed uprootSeed;
 
+    Vector3[] initialPositions = new Vector3[7];
+
     void Start()
     {
         navigate = InputSystem.actions.FindAction("Navigate");
@@ -29,15 +31,20 @@ public class PlanterList : MonoBehaviour
 
     void OnEnable()
     {
+        offset = 0;
         foreach (Transform child in transform)
         {
             Destroy(child.gameObject);
         }
 
+        lerpAmount = GetComponent<RectTransform>().rect.width / 5;
+
         for (int i = 0; i < 7; i++)
         {
             seedCard = Instantiate(seedCardPrefab, transform);
-            seedCard.transform.localPosition = new Vector3((i - 3) * lerpAmount, 0, 0);
+            seedCard.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, lerpAmount);
+            initialPositions[i] = new Vector3((i - 3) * lerpAmount, 0, 0);
+            seedCard.transform.localPosition = initialPositions[i];
         }
 
         seeds = GameObject.FindWithTag("Inventory").GetComponent<Inventory>().GetSeeds().ToList();
@@ -53,6 +60,12 @@ public class PlanterList : MonoBehaviour
         return (index % length + length) % length;
     }
 
+    private void EnableChildren(Transform transform, bool yes)
+    {
+        Debug.Log(yes);
+        transform.GetChild(1).gameObject.SetActive(yes);
+    }
+
     private void ApplySeeds()
     {
         for (int i = 0; i < transform.childCount; i++)
@@ -60,8 +73,10 @@ public class PlanterList : MonoBehaviour
             int idx = WrapIndex(i + offset, seeds.Count);
             Transform child = transform.GetChild(i);
             child.GetComponent<SeedCard>().SetSeed(seeds[idx]);
+            EnableChildren(child, false);
         }
         Seed selected = transform.GetChild(3).GetComponent<SeedCard>().seed;
+        EnableChildren(transform.GetChild(3), true);
         seedName.text = selected.name;
         seedBuff.text = selected.buff;
     }
@@ -70,48 +85,74 @@ public class PlanterList : MonoBehaviour
     {
         if (navigate.triggered && navigate.ReadValue<Vector2>().x != 0)
         {
-            StartCoroutine(DoNavigate(navigate.ReadValue<Vector2>().x));
+            DoNavigate(navigate.ReadValue<Vector2>().x);
         }
 
         if (confirm.triggered)
         {
-            Seed seed = GetComponentInChildren<SeedCard>().seed;
-
-            if (seed != uprootSeed) 
-            {
-                GetComponentInParent<PlanterUI>().SetSeed(seed);
-                seed.number--;
-            }
+            Seed seed = transform.GetChild(3).GetComponent<SeedCard>().seed;
 
             if (plot.plant != null)
             {
                 Inventory playerinv = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
                 playerinv.AddPlant(plot.plant);
+                plot.plant.seed.number += plot.plant.seedAmount; 
 
-                Destroy(plot.plant);
+                Destroy(plot.plant.gameObject);
                 plot.plant = null;
             }
+
+            if (seed != uprootSeed) 
+            {
+                GetComponentInParent<PlanterUI>().SetSeed(seed);
+                seed.number--;
+            } 
+            else
+            {
+                GetComponentInParent<PlanterUI>().CloseUI();
+            }
         }
     }
 
-    IEnumerator DoNavigate(float direction)
-    {
-        Vector3[] initialPositions = (from Transform child in transform select child.localPosition).ToArray();
-        for (float t = 0; t < 1; t += Time.deltaTime * scrollSpeed)
+    IEnumerator doNavigate;
+    float direction;
+
+    void DoNavigate(float direction) {
+        if (doNavigate != null)
         {
+            StopCoroutine(doNavigate);
+            offset += (int)this.direction;
+            ApplySeeds();
             for (int i = 0; i < transform.childCount; i++)
             {
-                transform.GetChild(i).localPosition = new Vector3(Mathf.Lerp(initialPositions[i].x, initialPositions[i].x - direction * lerpAmount, t), 0, 0);
+                transform.GetChild(i).position = initialPositions[i];
             }
-            yield return new WaitForEndOfFrame();
         }
+        doNavigate = DoNavigate();
+        StartCoroutine(doNavigate);
 
-        offset += (int)direction;
-        ApplySeeds();
-
-        for (int i = 0; i < transform.childCount; i++)
+        IEnumerator DoNavigate()
         {
-            transform.GetChild(i).localPosition = initialPositions[i];
+            this.direction = direction;
+            for (float t = 0; t < 1; t += Time.deltaTime * scrollSpeed)
+            {
+                for (int i = 0; i < transform.childCount; i++)
+                {
+                    transform.GetChild(i).localPosition = new Vector3(Mathf.Lerp(initialPositions[i].x, initialPositions[i].x - direction * lerpAmount, t), 0, 0);
+                }
+                yield return new WaitForEndOfFrame();
+            }
+
+            offset += (int)direction;
+            ApplySeeds();
+
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).localPosition = initialPositions[i];
+            }
+
+            doNavigate = null;
         }
     }
+
 }

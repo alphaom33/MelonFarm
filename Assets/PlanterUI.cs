@@ -32,7 +32,7 @@ public class PlanterUI : MonoBehaviour
         }
     }
 
-    void CloseUI()
+    public void CloseUI()
     {
         child.SetActive(false);
         WatermelonController.canMove = true;

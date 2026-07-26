@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df008ca0d8d2c2742aff8aa7888aaff2, type: 3}
   m_Name: Strawberry
   m_EditorClassIdentifier: Assembly-CSharp::Seed
-  icon: {fileID: 21300000, guid: e5c0078b94743b5468d137f0728f414e, type: 3}
+  icon: {fileID: 21300000, guid: 339709be08f47ea42a0158204d87345b, type: 2}
   name: Strawberry
   buff: +1 Dash
-  number: 0
+  number: 4

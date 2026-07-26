@@ -2841,11 +2841,11 @@ PrefabInstance:
     - target: {fileID: -1526964690268444965, guid: fe88434b6cdb42b4ba6a4c6103ada665, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: fb268e93200f246409e75411e8a89ff3, type: 2}
+      objectReference: {fileID: 2100000, guid: b689cc36e4f75ce42b1c68e32b2c36a8, type: 2}
     - target: {fileID: -809828480950454423, guid: fe88434b6cdb42b4ba6a4c6103ada665, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 00a58ec8571707f46a9fdc64e9b6512a, type: 2}
+      objectReference: {fileID: 2100000, guid: b689cc36e4f75ce42b1c68e32b2c36a8, type: 2}
     - target: {fileID: -628563888574754238, guid: fe88434b6cdb42b4ba6a4c6103ada665, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -2882,6 +2882,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7603786706384944740, guid: fe88434b6cdb42b4ba6a4c6103ada665, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b689cc36e4f75ce42b1c68e32b2c36a8, type: 2}
     - target: {fileID: 8416272007918961125, guid: fe88434b6cdb42b4ba6a4c6103ada665, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -5720,7 +5724,7 @@ MonoBehaviour:
   lerpAmount: 100
   seedCardPrefab: {fileID: 8740372874320177987, guid: 43c79823184f3ee4b8a71633012ab408, type: 3}
   plot: {fileID: 0}
-  uprootSeed: {fileID: 0}
+  uprootSeed: {fileID: 11400000, guid: f935fa8fdfbd6c3458b1ba1274f36fdc, type: 2}
 --- !u!4 &1122756941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5057053493249154558, guid: ca639b0ccc5dd3445b8d473b599e2409, type: 3}
@@ -7270,146 +7274,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca639b0ccc5dd3445b8d473b599e2409, type: 3}
---- !u!1 &1401930828
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1401930833}
-  - component: {fileID: 1401930832}
-  - component: {fileID: 1401930831}
-  - component: {fileID: 1401930830}
-  - component: {fileID: 1401930829}
-  m_Layer: 0
-  m_Name: InteractionTest
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1401930829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401930828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 112eaaaa401496742b3ea3f7e379e9c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  interactEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401930828}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!65 &1401930830
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401930828}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1401930831
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401930828}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1401930832
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401930828}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1401930833
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1401930828}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.49, y: 0, z: -1.34}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1408046006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5057053493249154558, guid: ca639b0ccc5dd3445b8d473b599e2409, type: 3}
@@ -8504,7 +8368,7 @@ MonoBehaviour:
   Money: 0
   PlotCost: 0
   Seeds: []
-  plants: []
+  sellAmount: 0
 --- !u!1001 &1624545024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10599,7 +10463,6 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1818691241}
-  - {fileID: 1401930833}
   - {fileID: 531019743}
   - {fileID: 83068099}
   - {fileID: 478832796}

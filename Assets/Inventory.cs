@@ -11,7 +11,7 @@ public class Inventory : MonoBehaviour
 
 
     public Seed[] Seeds;
-    public List<PlantController> plants = new();
+    public float sellAmount;
 
     public void Start()
     {
@@ -27,13 +27,13 @@ public class Inventory : MonoBehaviour
         return Seeds.Where(s => s.number > 0).ToArray();
     }
 
-    public void AddPlant(PlantController plant)
+    public void AddPlant(PlantConroller plant)
     {
-        plants.Add(plant);
+        sellAmount += plant.sellPrice;
     }
 
     public float SellPlants()
     {
-        return plants.Sum(p => p.sellPrice);
+        return sellAmount;
     }
 }

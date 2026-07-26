@@ -148,6 +148,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa4069b61b017864199e8680deeae0ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FarmPlot
+  plant: {fileID: 0}
+  dumbStupidIdiotList:
+  - {fileID: 4829763129419950669, guid: 99acdabfa3104e94d88f541e8822c8c3, type: 3}
 --- !u!114 &1213204505744949793
 MonoBehaviour:
   m_ObjectHideFlags: 0
