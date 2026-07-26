@@ -84,7 +84,7 @@ public class PlanterList : MonoBehaviour
         Seed selected = transform.GetChild(3).GetComponent<SeedCard>().seed;
         EnableChildren(transform.GetChild(3), true);
         seedName.text = selected.name;
-        seedBuff.text = selected.buff;
+        seedBuff.text = "x" + selected.number;
     }
 
     public void Update()

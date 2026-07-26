@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Inventory : MonoBehaviour
 
     public Seed[] Seeds;
     public float sellAmount;
+
+    public TMP_Text moneyDisp;
 
     public void Start()
     {
@@ -29,11 +32,11 @@ public class Inventory : MonoBehaviour
 
     public void AddPlant(PlantConroller plant)
     {
-        sellAmount += plant.sellPrice;
+        Money += plant.sellPrice;
     }
 
-    public float SellPlants()
+    void Update()
     {
-        return sellAmount;
+        moneyDisp.text = Money.ToString();
     }
 }

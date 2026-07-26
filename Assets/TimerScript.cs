@@ -16,18 +16,6 @@ public class TimerScript : MonoBehaviour
     void Update()
     {
         Timer.text = Mathf.Round(Player.time).ToString();
-
-        if (Player.time < 26 && Player.time > 0)
-        {
-            Timer.color = Color.darkRed;
-            Timer.fontSize += Time.deltaTime*5;
-        }
-        if (Player.time <= 0)
-        {
-            Timer.color = Color.white;
-            Timer.fontSize = DefSize;
-
-        }
     }
 
 

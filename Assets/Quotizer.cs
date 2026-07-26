@@ -6,9 +6,10 @@ using Unity.VisualScripting;
 public class Quotizer : MonoBehaviour
 {
     public TMP_Text amountDisplay;
-    public int amount;
+    public float amount;
     public int[] levels;
     public int idx;
+    public DeathTimer deathTimer;
 
     void Start()
     {
@@ -23,9 +24,14 @@ public class Quotizer : MonoBehaviour
 
     public void Pay()
     {
-        if (GameObject.FindWithTag("Inventory").TryGetComponent(out Inventory inv) && inv.Money >= amount)
+        Inventory Inv = GameObject.FindWithTag("Inventory").GetComponent<Inventory>();
+        float cost = Mathf.Min(amount, Inv.Money);
+        amount -= cost;
+        Inv.Money -= cost;
+
+        if (amount == 0)
         {
-            inv.Money -= amount;
+            deathTimer.ResetTime();
             idx++;
             if (idx >= levels.Length)
             {

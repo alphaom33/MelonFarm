@@ -7,6 +7,7 @@ TagManager:
   - PlanterUI
   - Farm
   - Inventory
+  - AudioSingularity
   layers:
   - Default
   - TransparentFX

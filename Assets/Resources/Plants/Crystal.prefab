@@ -79,4 +79,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantConroller
   sellPrice: 20
   seed: {fileID: 0}
-  seedAmount: 2
+  seedAmount: 1

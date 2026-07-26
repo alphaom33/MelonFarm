@@ -20,12 +20,10 @@ public class TimerAdd : MonoBehaviour
     public void BuyTime()
     {
         Inventory playerinv = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
-        if (playerinv.Stone >= 1)
+        if (playerinv.Money >= 10)
         {
-            playerinv.Wood--;
+            playerinv.Money -= 10;
             playerinv.GetComponentInParent<WatermelonController>().seconds += UpgradeAmmount;
-
-            
         }
 
     }

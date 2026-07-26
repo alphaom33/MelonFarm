@@ -103,7 +103,7 @@ MonoBehaviour:
   wood: 0
   seeds:
   - seed: {fileID: 11400000, guid: 69a4346fa97f86f46a9ad939ab3c2760, type: 2}
-    amount: 3
+    amount: 1
   pickup: 0
 --- !u!114 &-4989405100012729465
 MonoBehaviour:
