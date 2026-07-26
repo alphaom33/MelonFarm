@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1412334900177689851}
   - component: {fileID: 7243849089510638098}
   - component: {fileID: 4462270442572107892}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Unowned Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,3 +127,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   Coin: {fileID: 1576557788543132320, guid: ede4e34831b675344af989c8ca8465f3, type: 3}
   coinoffset: 2
+  coined: 0

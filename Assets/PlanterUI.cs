@@ -10,10 +10,10 @@ public class PlanterUI : MonoBehaviour
 
     public void OpenUI(FarmPlot plot)
     {
-        if (GameObject.FindWithTag("Inventory").GetComponent<Inventory>().GetSeeds().Length == 0) return;
+        if (plot.plant == null && GameObject.FindWithTag("Inventory").GetComponent<Inventory>().GetSeeds().Length == 0) return;
 
+        child.GetComponentInChildren<PlanterList>().plot = plot;
         child.SetActive(true);
-        child.transform.LookAt(Camera.main.transform);
         WatermelonController.canMove = false;
         this.plot = plot;
     }

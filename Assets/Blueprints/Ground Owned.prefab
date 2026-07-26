@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1699638569595853051}
   - component: {fileID: 7727255412581932341}
   - component: {fileID: 8809745796949822650}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground Owned
   m_TagString: Farm
   m_Icon: {fileID: 0}
