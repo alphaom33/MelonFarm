@@ -87,7 +87,6 @@ public class WatermelonController : MonoBehaviour
         targetPosition = Respawn.position;
         time = seconds;
 
-        Timer.Timer.rectTransform.anchoredPosition = Timer.TimerPos;
         Timer.Timer.color = Color.white;
         Timer.Timer.fontSize = Timer.DefSize;
         Isdead = false;
