@@ -9690,9 +9690,10 @@ MonoBehaviour:
   rotSpeed: 500
   seconds: 300
   playerinv: {fileID: 1620317790}
-  Body: {fileID: 1344160990}
+  Body: {fileID: 6075021045676203929, guid: f71da6d5a3e9acd46ba6ae2368500eb6, type: 3}
   Respawn: {fileID: 1858130539}
   Timer: {fileID: 1467243039}
+  Isdead: 0
 --- !u!4 &1818691241
 Transform:
   m_ObjectHideFlags: 0
