@@ -10,6 +10,7 @@ public class TimerScript : MonoBehaviour
     void Start()
     {
         DefSize = Timer.fontSize;
+   
     }
 
     // Update is called once per frame
