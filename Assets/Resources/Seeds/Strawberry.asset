@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Seed
   icon: {fileID: 21300000, guid: 7e431f9bb2927f747aeb64dc95e56d17, type: 3}
   name: Strawberry
+<<<<<<< HEAD
   buff: 1
+=======
+  buff: 
+>>>>>>> 4ab891af20dfc3b661dbf15bb68c704ca0808eb9
   number: 0

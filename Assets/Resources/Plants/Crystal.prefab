@@ -77,4 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d8deac6d2200e4eb08ef0cf8fdfefb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantConroller
-  sellPrice: 5
+  sellPrice: 20
+  seed: {fileID: 0}
+  seedAmount: 2

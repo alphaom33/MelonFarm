@@ -12,14 +12,13 @@ public class TimerScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-       
         DefSize = Timer.fontSize;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Timer.text = Player.time.ToString();
+        Timer.text = Mathf.Round(Player.time).ToString();
 
         if (Player.time < 26 && Player.time > 0)
         {
@@ -39,6 +38,5 @@ public class TimerScript : MonoBehaviour
 
     void CountDown()
     {
-
     }
 }
