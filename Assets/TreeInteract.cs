@@ -19,14 +19,12 @@ public class TreeInteract : MonoBehaviour
     public void Wood()
     {
         chops++;
-        Debug.Log("grrr");
         if (chops >= 3)
         {
             //make stone pickups.
             Instantiate(WoodDrop, transform.position, Quaternion.identity);
             
-            Destroy(this.gameObject);
-            Debug.Log("woody");
+            Destroy(gameObject);
         }
     }
 }

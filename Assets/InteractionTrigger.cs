@@ -12,7 +12,6 @@ public class InteractionTrigger : MonoBehaviour
         interact = InputSystem.actions.FindAction("Interact");
     }
 
-    // Update is called once per frame
     void Update()
     {
     }

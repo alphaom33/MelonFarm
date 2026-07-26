@@ -24,11 +24,7 @@ public class StoneInteract : MonoBehaviour
             //make stone pickups.
             Instantiate(StoneDrop, transform.position, Quaternion.identity);
            
-            Destroy(this.gameObject);
-            Debug.Log("rocking");
-          
+            Destroy(gameObject);
         }
-        
-        
     }
 }

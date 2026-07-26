@@ -21,9 +21,8 @@ public class WoodPickup : MonoBehaviour
     {
         if (other.gameObject.GetComponent<WatermelonController>() != null)
         {
-            Debug.Log("pickup");
             other.gameObject.GetComponentInChildren<Inventory>().Wood++;
-            Destroy(this.gameObject);
+            Destroy(gameObject);
 
         }
 

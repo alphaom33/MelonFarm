@@ -20,10 +20,8 @@ public class StonePickup : MonoBehaviour
     {
         if (other.gameObject.GetComponent<WatermelonController>() != null)
         {
-            Debug.Log("pickup");
             other.gameObject.GetComponentInChildren<Inventory>().Stone++;
-            Destroy(this.gameObject);
-
+            Destroy(gameObject);
         }
 
     }
