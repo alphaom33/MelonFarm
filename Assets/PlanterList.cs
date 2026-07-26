@@ -101,7 +101,7 @@ public class PlanterList : MonoBehaviour
         {
             for (int i = 0; i < transform.childCount; i++)
             {
-                transform.GetChild(i).localPosition = new Vector3(Mathf.Lerp(initialPositions[i].x, initialPositions[i].x + direction * lerpAmount, t), 0, 0);
+                transform.GetChild(i).localPosition = new Vector3(Mathf.Lerp(initialPositions[i].x, initialPositions[i].x - direction * lerpAmount, t), 0, 0);
             }
             yield return new WaitForEndOfFrame();
         }
