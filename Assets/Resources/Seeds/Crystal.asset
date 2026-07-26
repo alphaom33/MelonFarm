@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Seed
   icon: {fileID: 0}
   name: Crystal
-  buff: 
+  buff: 3
   number: 0

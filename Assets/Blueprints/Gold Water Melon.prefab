@@ -75,6 +75,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d011084f9e0edc4f9230c7c54c84c57, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5276533308354496316}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d011084f9e0edc4f9230c7c54c84c57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1811681027623739933}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2d011084f9e0edc4f9230c7c54c84c57, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8708774751939823511}
   m_SourcePrefab: {fileID: 100100000, guid: 2d011084f9e0edc4f9230c7c54c84c57, type: 3}
 --- !u!1 &6108520632243379271 stripped
 GameObject:
@@ -99,3 +105,51 @@ MonoBehaviour:
   - seed: {fileID: 11400000, guid: 91f108402bfc1454e8fe9a4ab966314f, type: 2}
     amount: 3
   pickup: 0
+--- !u!114 &1811681027623739933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6108520632243379271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 112eaaaa401496742b3ea3f7e379e9c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interactor
+  interactEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5276533308354496316}
+        m_TargetAssemblyTypeName: BodyScript, Assembly-CSharp
+        m_MethodName: AddToInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!65 &8708774751939823511
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6108520632243379271}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.023682237, y: 0.03610843, z: 0.034066375}
+  m_Center: {x: -0.000005135536, y: 0.0040518213, z: -0.004248408}
