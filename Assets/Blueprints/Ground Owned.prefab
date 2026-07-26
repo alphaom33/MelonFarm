@@ -125,3 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c7d1da2776c77d4c8f25befdd67ecab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  Rake: {fileID: 5780981048020949700, guid: 06efeff61afbacf4483ec2b66443f1f9, type: 3}
+  rakeoffset: 2
+  Plotable: 0
