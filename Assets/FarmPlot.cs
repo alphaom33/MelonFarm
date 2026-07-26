@@ -3,7 +3,7 @@ using UnityEngine;
 public class FarmPlot : MonoBehaviour
 {
     PlanterUI planterUI;
-    Seed seed;
+    public PlantController plant;
 
     void Start()
     {
@@ -17,7 +17,9 @@ public class FarmPlot : MonoBehaviour
 
     public void SetSeed(Seed seed)
     {
-        this.seed = seed;
-        Instantiate(Resources.Load<GameObject>("Plants/" + seed.name), transform).transform.localScale = Vector3.one * 10;
+        GameObject plantObject = Instantiate(Resources.Load<GameObject>("Plants/" + seed.name), transform);
+        plantObject.transform.localScale = new Vector3(plantObject.transform.localScale.x / transform.localScale.x, plantObject.transform.localScale.y / transform.localScale.y, plantObject.transform.localScale.z / transform.localScale.z);
+
+        plant = plantObject.GetComponentInChildren<PlantController>();
     }
 }

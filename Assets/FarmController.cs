@@ -8,8 +8,6 @@ public class FarmController : MonoBehaviour
     public int cols;
     public float tileSize;
 
-    public Seed[] seeds;
-
     void MakeFarm()
     {
         for (int i = 0; i < rows; i++)
@@ -31,6 +29,4 @@ public class FarmController : MonoBehaviour
         }
         MakeFarm();
     }
-
-    public Seed[] GetSeeds() => seeds;
 }

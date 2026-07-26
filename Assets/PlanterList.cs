@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using TMPro;
 using System.Collections;
 using System.Linq;
+using System.Collections.Generic;
 
 public class PlanterList : MonoBehaviour
 {
@@ -15,8 +16,10 @@ public class PlanterList : MonoBehaviour
     public float scrollSpeed = 5f;
     public float lerpAmount;
     public GameObject seedCardPrefab;
-    Seed[] seeds;
+    List<Seed> seeds;
     int offset;
+    public FarmPlot plot;
+    public Seed uprootSeed;
 
     void Start()
     {
@@ -37,7 +40,11 @@ public class PlanterList : MonoBehaviour
             seedCard.transform.localPosition = new Vector3((i - 3) * lerpAmount, 0, 0);
         }
 
-        seeds = GameObject.FindWithTag("Inventory").GetComponent<Inventory>().GetSeeds();
+        seeds = GameObject.FindWithTag("Inventory").GetComponent<Inventory>().GetSeeds().ToList();
+        if (plot.plant != null)
+        {
+            seeds.Add(uprootSeed);
+        }
         ApplySeeds();
     }
 
@@ -50,10 +57,9 @@ public class PlanterList : MonoBehaviour
     {
         for (int i = 0; i < transform.childCount; i++)
         {
-            int idx = WrapIndex(i + offset, seeds.Length);
-            Seed seed = seeds[idx];
+            int idx = WrapIndex(i + offset, seeds.Count);
             Transform child = transform.GetChild(i);
-            child.GetComponent<SeedCard>().SetSeed(seed);
+            child.GetComponent<SeedCard>().SetSeed(seeds[idx]);
         }
         Seed selected = transform.GetChild(3).GetComponent<SeedCard>().seed;
         seedName.text = selected.name;
@@ -70,8 +76,21 @@ public class PlanterList : MonoBehaviour
         if (confirm.triggered)
         {
             Seed seed = GetComponentInChildren<SeedCard>().seed;
-            GetComponentInParent<PlanterUI>().SetSeed(seed);
-            seed.number--;
+
+            if (seed != uprootSeed) 
+            {
+                GetComponentInParent<PlanterUI>().SetSeed(seed);
+                seed.number--;
+            }
+
+            if (plot.plant != null)
+            {
+                Inventory playerinv = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+                playerinv.AddPlant(plot.plant);
+
+                Destroy(plot.plant);
+                plot.plant = null;
+            }
         }
     }
 
