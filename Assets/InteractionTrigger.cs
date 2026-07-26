@@ -22,7 +22,6 @@ public class InteractionTrigger : MonoBehaviour
         {
             interactor.TriggerInteract();
         }
-
     }
    
 }
