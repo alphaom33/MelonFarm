@@ -3454,6 +3454,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 8809745796949822650, guid: 0e6ba27601f94e041ac9f38343f8058a, type: 3}
+      propertyPath: rakeoffset
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
