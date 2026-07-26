@@ -29,8 +29,10 @@ public class FarmgrassScript : MonoBehaviour
     private void ScanPlotInitial(Vector3 direction)
     {
         if (Physics.Raycast(transform.position, direction, out RaycastHit hit, LayerMask.GetMask("Ground"))
+            && Plotable == false
             && hit.collider.gameObject.GetComponent<FarmPlot>() != null)
         {
+            Plotable = true;
             MakeRake(gameObject);
         }
     }
@@ -39,7 +41,9 @@ public class FarmgrassScript : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, direction, out RaycastHit hit, LayerMask.GetMask("Ground"))
             && hit.collider.gameObject.GetComponent<FarmPlot>() == null
+            && hit.collider.gameObject.GetComponent<FarmgrassScript>() != null
             && !hit.collider.gameObject.GetComponent<FarmgrassScript>().Plotable)
+           
 
         {
 
