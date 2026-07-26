@@ -83,16 +83,14 @@ public class WatermelonController : MonoBehaviour
         playerinv.Stone = 0;
         playerinv.Wood = 0;
 
-
         transform.position = Respawn.position;
+        targetPosition = Respawn.position;
         time = seconds;
-      
 
         Timer.Timer.rectTransform.anchoredPosition = Timer.TimerPos;
         Timer.Timer.color = Color.white;
         Timer.Timer.fontSize = Timer.DefSize;
         Isdead = false;
-
     }
 
     void FixedUpdate()
