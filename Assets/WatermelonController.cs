@@ -37,7 +37,7 @@ public class WatermelonController : MonoBehaviour
     void Move()
     {
         Vector2 moveInput = canMove ? move.ReadValue<Vector2>().normalized : Vector2.zero;
-        targetPosition = transform.position + moveSpeed * Time.deltaTime * new Vector3(moveInput.x, 0, moveInput.y);
+        targetPosition = transform.position + moveSpeed * new Vector3(moveInput.x, 0, moveInput.y);
 
         if (moveInput != Vector2.zero)
         {
