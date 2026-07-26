@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Gold
   m_EditorClassIdentifier: Assembly-CSharp::Seed
   icon: {fileID: 0}
-  name: 
+  name: Gold
   buff: 
   number: 0

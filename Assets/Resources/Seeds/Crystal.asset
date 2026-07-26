@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Crystal
   m_EditorClassIdentifier: Assembly-CSharp::Seed
   icon: {fileID: 0}
-  name: 
+  name: Crystal
   buff: 
   number: 0

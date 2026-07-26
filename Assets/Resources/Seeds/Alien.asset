@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Alien
   m_EditorClassIdentifier: Assembly-CSharp::Seed
   icon: {fileID: 0}
-  name: 
+  name: Alien
   buff: 
   number: 0
