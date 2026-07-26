@@ -23,6 +23,7 @@ public class WatermelonController : MonoBehaviour
     public Transform Respawn;
     private Animator animator;
     public TimerScript Timer;
+    public bool Isdead;
 
     public static bool canMove = true;
 
@@ -33,6 +34,7 @@ public class WatermelonController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         targetPosition = transform.position;
         animator = GetComponentInChildren<Animator>();
+        Isdead = false;
     }
 
     void Move()
@@ -69,10 +71,11 @@ public class WatermelonController : MonoBehaviour
             time -= Time.deltaTime;
         }
 
-        if (time <= 0) Die();
+        if (time <= 0 && Isdead == false) Die();
     }
     private void Die()
     {
+        Isdead = true;
         GameObject Corpse = Instantiate(Body, transform.position, Quaternion.identity);
         BodyScript BodInv = Corpse.GetComponent<BodyScript>();
         BodInv.stone = playerinv.Stone;
@@ -88,6 +91,7 @@ public class WatermelonController : MonoBehaviour
         Timer.Timer.rectTransform.anchoredPosition = Timer.TimerPos;
         Timer.Timer.color = Color.white;
         Timer.Timer.fontSize = Timer.DefSize;
+        Isdead = false;
 
     }
 
